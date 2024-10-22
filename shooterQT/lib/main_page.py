@@ -1,6 +1,6 @@
 from typing import Any
 
-from PyQt5.QtCore import QSize
+from PyQt5.QtCore import QSize, Qt
 from PyQt5.QtWidgets import QMainWindow, QWidget, QHBoxLayout, QStackedWidget
 
 from app.src.utils.const import STYLE_COLOR_BACKGROUND, STYLE_COLOR_BORDER
@@ -11,7 +11,7 @@ class MainPage(QMainWindow):
 
     def __init__(self):
         super().__init__()
-
+        self.setWindowFlags(Qt.FramelessWindowHint)
         self.setObjectName('app_main')
         size = QSize(800, 480)
         self.setMaximumSize(size)
