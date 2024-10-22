@@ -1,3 +1,4 @@
+import sys
 from cProfile import label
 from typing import Any, Type
 
@@ -55,7 +56,7 @@ class AccountPage(PageInterface, AbstractPage):
 
 
     def setup_connections(self) -> Any:
-        pass
+        self.deconnection_button.triggered.connect(self.on_action_exit_triggered)
 
     def retranslate_ui(self) -> Any:
         self.setWindowTitle(QCoreApplication.translate("main_form", u"main_form", None))
@@ -67,5 +68,8 @@ class AccountPage(PageInterface, AbstractPage):
 
     def update_page(self):
         print('Search Page update')
+
+    def on_action_exit_triggered(self):
+        sys.exit()
 
 
