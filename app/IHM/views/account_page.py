@@ -56,7 +56,7 @@ class AccountPage(PageInterface, AbstractPage):
 
 
     def setup_connections(self) -> Any:
-        self.deconnection_button.triggered.connect(self.on_action_exit_triggered)
+        self.deconnection_button.clicked.connect(self.on_action_exit_triggered)
 
     def retranslate_ui(self) -> Any:
         self.setWindowTitle(QCoreApplication.translate("main_form", u"main_form", None))
